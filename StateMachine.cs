@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public interface IState
 {
@@ -26,7 +25,6 @@ public class StateMachine
         IState newState = states[newState_name];
         if(newState == null)
         {
-            Debug.Log("Couldnt find a state with this name.");
             return;
         }
         if (newState == currentState)
@@ -53,7 +51,6 @@ public class StateMachine
         {
             if (states.ContainsKey(name))
             {
-                Debug.Log("A state with the same name is already loaded. State name: " + name);
                 return;
             }
         }
